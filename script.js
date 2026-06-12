@@ -1,7 +1,7 @@
 // Countdown Timer
 function updateCountdown() {
     // Set your wedding date here (Year, Month-1, Day, Hour, Minute)
-    const weddingDate = new Date(2027, 5, 15, 15, 0, 0); // June 15, 2025 at 3:00 PM
+    const weddingDate = new Date(2027, 4, 15, 15, 0, 0); // June 15, 2025 at 3:00 PM
     const now = new Date();
     const difference = weddingDate - now;
 
