@@ -57,7 +57,7 @@ nav a:hover {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(45, 90, 39, 0.4), rgba(93, 138, 168, 0.4)),
-                url('https://imgur.com/AQHlo4g') center/cover;
+                url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,14 +102,6 @@ nav a:hover {
     font-size: 1.2rem;
     letter-spacing: 2px;
     margin-top: 1rem;
-}
-
-/* Decorative Dividers */
-.section-divider {
-    text-align: center;
-    padding: 1rem;
-    font-size: 1.5rem;
-    letter-spacing: 0.5rem;
 }
 
 /* Countdown Section */
@@ -264,4 +256,240 @@ nav a:hover {
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 5px 25px rgba(45, 90, 39,
+    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+    max-width: 350px;
+    border: 3px solid #5d8aa8;
+    position: relative;
+}
+
+.event-card::before {
+    content: '⛺';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    background: white;
+    padding: 0 10px;
+}
+
+.event-card:nth-child(2)::before {
+    content: '🎉';
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    color: #2d5a27;
+}
+
+.event-card .time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #5d8aa8;
+}
+
+.event-card .venue {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #3d3d3d;
+}
+
+.event-card .address {
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #2d5a27;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: #5d8aa8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(93, 138, 168, 0.4);
+}
+
+.additional-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.additional-info h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2d5a27;
+}
+
+.additional-info p {
+    color: #3d3d3d;
+}
+
+/* RSVP Section */
+.rsvp {
+    padding: 6rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d5a27;
+}
+
+.rsvp > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #5d8aa8;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2d5a27;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #87a878;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #5d8aa8;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 0.5rem;
+    accent-color: #2d5a27;
+}
+
+.radio-group label {
+    display: inline;
+    font-weight: normal;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #2d5a27 0%, #3d5a27 50%, #5d8aa8 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+footer::before {
+    content: '🐕 🏕️ 🌲 ❤️ 🌲 🏕️ 🐕';
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-hashtag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Paw Print Trail */
+.paw-trail {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content .date {
+        font-size: 1.5rem;
+    }
+    
+    .hero::before {
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .events {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .time-block {
+        min-width: 80px;
+        padding: 1rem;
+    }
+    
+    .time-block span {
+        font-size: 2rem;
+    }
+    
+    .details::before {
+        font-size: 1.5rem;
+    }
+}
