@@ -515,6 +515,140 @@ footer p {
     color: #3d3d3d;
     line-height: 1.6;
 }
+
+/* Travel & Accommodations Section */
+.travel {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #dce8f0 0%, #e8efe5 100%);
+}
+
+.travel h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d5a27;
+}
+
+.travel-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #5d8aa8;
+    margin-bottom: 3rem;
+}
+
+.travel-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.travel-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.travel-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #87a878;
+    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+}
+
+.travel-info {
+    flex: 1;
+    max-width: 550px;
+}
+
+.travel-info h3 {
+    font-size: 1.5rem;
+    color: #2d5a27;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.travel-info h3:first-child {
+    margin-top: 0;
+}
+
+.travel-info p {
+    color: #3d3d3d;
+    line-height: 1.6;
+}
+
+.venue-address {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #2d5a27;
+    margin: 1rem 0;
+}
+
+.distance-list {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.distance-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #87a878;
+}
+
+.distance-item .city {
+    font-weight: bold;
+    color: #2d5a27;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.distance-item .time {
+    color: #5d8aa8;
+    font-weight: bold;
+}
+
+.distance-item .miles {
+    color: #8b7355;
+}
+
+.accommodation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    border: 2px solid #87a878;
+}
+
+.accommodation h4 {
+    font-size: 1.2rem;
+    color: #2d5a27;
+    margin-bottom: 0.5rem;
+}
+
+.accommodation p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-small {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.travel-info .btn {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -567,5 +701,32 @@ footer p {
     
     .food-image img {
         height: 250px;
+    }
+    
+    .travel-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .travel-image {
+        max-width: 300px;
+    }
+    
+    .travel-info {
+        text-align: center;
+    }
+    
+    .venue-address {
+        border-left: none;
+        border-top: 4px solid #2d5a27;
+    }
+    
+    .distance-item {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .distance-item .city {
+        text-align: center;
     }
 }
