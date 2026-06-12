@@ -1,0 +1,369 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b8860b;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.hero-content .tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.hero-content .date {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .location {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Countdown Section */
+.countdown {
+    padding: 4rem 2rem;
+    background: #f9f5f0;
+    text-align: center;
+}
+
+.countdown h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.time-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 120px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.time-block span {
+    display: block;
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #b8860b;
+}
+
+.time-block label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Our Story Section */
+.story {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #b8860b;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: #b8860b;
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+    color: #b8860b;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+/* Details Section */
+.details {
+    padding: 6rem 2rem;
+    background: #f9f5f0;
+}
+
+.details h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.events {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.event-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #b8860b;
+}
+
+.event-card .time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.event-card .venue {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-card .address {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #b8860b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #9a7209;
+}
+
+.additional-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.additional-info h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* RSVP Section */
+.rsvp {
+    padding: 6rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.rsvp > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 0.5rem;
+}
+
+.radio-group label {
+    display: inline;
+    font-weight: normal;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content .date {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+    }
+    
+    .events {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .time-block {
+        min-width: 80px;
+        padding: 1rem;
+    }
+    
+    .time-block span {
+        font-size: 2rem;
+    }
+}
