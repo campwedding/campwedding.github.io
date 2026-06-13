@@ -340,182 +340,6 @@ nav a:hover {
     color: #3d3d3d;
 }
 
-/* RSVP Section */
-.rsvp {
-    padding: 6rem 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.rsvp h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #2d5a27;
-}
-
-.rsvp > p {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #5d8aa8;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #2d5a27;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #87a878;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #5d8aa8;
-}
-
-.radio-group {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.radio-group input {
-    margin-right: 0.5rem;
-    accent-color: #2d5a27;
-}
-
-.radio-group label {
-    display: inline;
-    font-weight: normal;
-}
-
-.btn-primary {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(135deg, #2d5a27 0%, #3d5a27 50%, #5d8aa8 100%);
-    color: white;
-    text-align: center;
-    padding: 3rem 2rem;
-    position: relative;
-}
-
-footer::before {
-    content: '🐕 🏕️ 🌲 ❤️ 🌲 🏕️ 🐕';
-    display: block;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5rem;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-.footer-hashtag {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-/* Paw Print Trail */
-.paw-trail {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-/* Food & Drink Section */
-.food-drink {
-    padding: 6rem 2rem;
-    background: #f5f2eb;
-}
-
-.food-drink h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #2d5a27;
-}
-
-.food-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #5d8aa8;
-    margin-bottom: 3rem;
-}
-
-.food-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.food-image {
-    flex: 1;
-    max-width: 300px;
-}
-
-.food-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid #87a878;
-    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
-}
-
-.food-text {
-    flex: 1;
-    max-width: 400px;
-    text-align: center;
-}
-
-.food-text h3 {
-    font-size: 1.4rem;
-    color: #2d5a27;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.food-text h3:first-child {
-    margin-top: 0;
-}
-
-.food-text p {
-    color: #3d3d3d;
-    line-height: 1.6;
-}
-
 /* Travel & Accommodations Section */
 .travel {
     padding: 6rem 2rem;
@@ -649,135 +473,317 @@ footer p {
     margin-bottom: 1rem;
 }
 
+/* Food & Drink Section */
+.food-drink {
+    padding: 6rem 2rem;
+    background: #f5f2eb;
+}
+
+.food-drink h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d5a27;
+}
+
+.food-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #5d8aa8;
+    margin-bottom: 3rem;
+}
+
+.food-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.food-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+.food-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #87a878;
+    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+}
+
+.food-text {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+}
+
+.food-text h3 {
+    font-size: 1.4rem;
+    color: #2d5a27;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.food-text h3:first-child {
+    margin-top: 0;
+}
+
+.food-text p {
+    color: #3d3d3d;
+    line-height: 1.6;
+}
+
+/* Registry Section */
+.registry {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #dce8f0 0%, #e8efe5 100%);
+    text-align: center;
+}
+
+.registry h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d5a27;
+}
+
+.registry-intro {
+    font-size: 1.1rem;
+    color: #3d3d3d;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registry-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.registry-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #3d3d3d;
+    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+    border: 3px solid #87a878;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    flex: 1;
+    max-width: 250px;
+}
+
+.registry-card:hover {
+    transform: translateY(-5px);
+    border-color: #5d8aa8;
+    box-shadow: 0 8px 30px rgba(93, 138, 168, 0.25);
+}
+
+.registry-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.registry-card h3 {
+    font-size: 1.3rem;
+    color: #2d5a27;
+    margin-bottom: 0.5rem;
+}
+
+.registry-card p {
+    font-size: 0.95rem;
+    color: #5d8aa8;
+}
+
 /* Campers Section */
 .campers {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #2d5a27 0%, #1a3d18 100%);
-    color: white;
+    background: linear-gradient(180deg, #e8efe5 0%, #dce8f0 100%);
 }
 
 .campers h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.campers-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #b8d4b8;
-    margin-bottom: 2rem;
-}
-
-.camper-alert {
-    background: linear-gradient(135deg, #5d8aa8 0%, #4a7a9a 100%);
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-    font-size: 1.2rem;
-}
-
-.camper-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.camper-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.camper-icon {
-    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #2d5a27;
 }
 
-.camper-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #b8d4b8;
-}
-
-.camper-card p {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-}
-
-.camper-list {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
-}
-
-.camper-list li {
-    padding: 0.3rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.camper-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #87a878;
-}
-
-.camper-contact {
+.campers-intro {
     text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    max-width: 400px;
+    font-size: 1.1rem;
+    color: #3d3d3d;
+    margin-bottom: 3rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.camper-contact h3 {
-    color: #b8d4b8;
-    margin-bottom: 1rem;
+.camper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.contact-info {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
-}
-
-.camper-rsvp {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.camper-rsvp h3 {
-    color: #b8d4b8;
-    margin-bottom: 0.5rem;
-}
-
-.camper-rsvp p {
-    margin-bottom: 1rem;
-}
-
-.camper-rsvp .btn {
+.camper-card {
     background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+    border: 3px solid #87a878;
+}
+
+.camper-card h3 {
+    font-size: 1.3rem;
+    color: #2d5a27;
+    margin-bottom: 1rem;
+}
+
+.camper-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.camper-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #87a878;
+    color: #3d3d3d;
+}
+
+.camper-card li:last-child {
+    border-bottom: none;
+}
+
+.camper-card p {
+    color: #3d3d3d;
+    margin-top: 0.5rem;
+}
+
+/* Camper-only visibility (hidden by default, shown via JavaScript) */
+.camper-only {
+    display: none;
+}
+
+/* RSVP Section */
+.rsvp {
+    padding: 6rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: #2d5a27;
 }
 
-.camper-rsvp .btn:hover {
-    background: #b8d4b8;
+.rsvp > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #5d8aa8;
 }
 
-/* Hide camper-only elements by default (JS will show them) */
-.camper-only {
-    display: none;
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2d5a27;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #87a878;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #5d8aa8;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 0.5rem;
+    accent-color: #2d5a27;
+}
+
+.radio-group label {
+    display: inline;
+    font-weight: normal;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #2d5a27 0%, #3d5a27 50%, #5d8aa8 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+footer::before {
+    content: '🐕 🏕️ 🌲 ❤️ 🌲 🏕️ 🐕';
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-hashtag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Paw Print Trail */
+.paw-trail {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 /* Responsive Design */
@@ -796,14 +802,13 @@ footer p {
     }
     
     nav ul {
-        gap: 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
-        justify-content: center;
         padding: 0 1rem;
     }
     
     nav a {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         letter-spacing: 1px;
     }
     
@@ -864,26 +869,14 @@ footer p {
         text-align: center;
     }
     
-    .registry-cards {
+    .registry-grid {
         flex-direction: column;
         align-items: center;
     }
     
     .registry-card {
+        max-width: 280px;
         width: 100%;
-        max-width: 300px;
-    }
-    
-    .dog-card {
-        width: 200px;
-    }
-    
-    .dog-card img {
-        height: 200px;
-    }
-    
-    .carousel-track {
-        animation-duration: 20s;
     }
     
     .camper-grid {
