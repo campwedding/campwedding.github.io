@@ -1,3 +1,8 @@
+// Check if user has logged in, if not redirect to login
+if (!sessionStorage.getItem('accessLevel')) {
+    window.location.href = 'login.html';
+}
+
 // Countdown Timer
 const weddingDate = new Date('May 15, 2027 16:00:00').getTime();
 
@@ -24,14 +29,10 @@ function checkCamperAccess() {
     const accessLevel = sessionStorage.getItem('accessLevel');
     
     if (accessLevel === 'camper') {
-        // Show all camper-only elements
         const camperElements = document.querySelectorAll('.camper-only');
         camperElements.forEach(el => {
-            // Check if it's a nav link or a section/form element
             if (el.tagName === 'A') {
                 el.style.display = 'inline';
-            } else if (el.tagName === 'SECTION') {
-                el.style.display = 'block';
             } else {
                 el.style.display = 'block';
             }
@@ -39,5 +40,4 @@ function checkCamperAccess() {
     }
 }
 
-// Run on page load
 checkCamperAccess();
