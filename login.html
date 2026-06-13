@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel & Bonita's Wedding</title>
+    <title>Gabe & Boni's Wedding</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <style>
         * {
@@ -15,11 +15,11 @@
         body {
             font-family: 'Lato', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(rgba(45, 90, 39, 0.6), rgba(93, 138, 168, 0.6)),
-                        url('https://i.imgur.com/AQHlo4g.jpg') center/cover fixed;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(rgba(45, 90, 39, 0.4), rgba(93, 138, 168, 0.4)),
+                        url('https://i.imgur.com/AQHlo4g.jpg') center/cover;
         }
         
         .login-container {
@@ -33,11 +33,6 @@
             border: 3px solid #87a878;
         }
         
-        .login-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        
         h1 {
             font-family: 'Playfair Display', serif;
             color: #2d5a27;
@@ -47,20 +42,18 @@
         
         .tagline {
             color: #5d8aa8;
-            font-style: italic;
             margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
         
-        .login-form {
-            margin-top: 1.5rem;
-        }
-        
-        .form-group {
+        .emojis {
+            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
         
         label {
             display: block;
+            text-align: left;
             margin-bottom: 0.5rem;
             color: #2d5a27;
             font-weight: bold;
@@ -72,103 +65,83 @@
             border: 2px solid #87a878;
             border-radius: 10px;
             font-size: 1rem;
-            text-align: center;
-            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
         }
         
         input[type="password"]:focus {
             outline: none;
-            border-color: #2d5a27;
+            border-color: #5d8aa8;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: linear-gradient(135deg, #2d5a27 0%, #5d8aa8 100%);
+        button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #2d5a27;
             color: white;
             border: none;
             border-radius: 25px;
             font-size: 1.1rem;
-            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         
-        .btn:hover {
+        button:hover {
+            background: #5d8aa8;
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(45, 90, 39, 0.4);
         }
         
-        .error-message {
+        .error {
             color: #c0392b;
             margin-top: 1rem;
             display: none;
-            padding: 0.5rem;
-            background: #fdeaea;
-            border-radius: 5px;
         }
         
         .hint {
-            margin-top: 2rem;
-            font-size: 0.85rem;
             color: #8b7355;
-        }
-        
-        .decorations {
+            font-size: 0.9rem;
             margin-top: 1.5rem;
-            font-size: 1.5rem;
-            letter-spacing: 0.5rem;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="login-icon">🐕 ⛺ 🐕</div>
-        <h1>Gabriel & Bonita</h1>
+        <h1>Gabe & Boni</h1>
         <p class="tagline">Are getting married!</p>
+        <div class="emojis">🏕️ 🐕 🌲</div>
         
-        <form class="login-form" onsubmit="return checkPassword(event)">
-            <div class="form-group">
-                <label for="password">Enter Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
-            </div>
-            <button type="submit" class="btn">Enter Site 🌲</button>
-            <p class="error-message" id="error">Incorrect password. Please try again!</p>
+        <form id="login-form">
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" placeholder="Password from your invitation" required>
+            <button type="submit">Enter Site</button>
         </form>
         
-        <p class="hint">Check your invitation for the password</p>
-        <div class="decorations">🐾 🏕️ 🐾</div>
+        <p class="error" id="error-message">Incorrect password. Please try again.</p>
+        <p class="hint">Check your invitation for the password!</p>
     </div>
-    
+
     <script>
-        function checkPassword(event) {
-            event.preventDefault();
+        const GUEST_PASSWORD = 'gabeandboni2027';
+        const CAMPER_PASSWORD = 'campers2027';
+        
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
             const password = document.getElementById('password').value.toLowerCase().trim();
-            const error = document.getElementById('error');
+            const errorMessage = document.getElementById('error-message');
             
-            // Regular guest password
-            if (password === 'wedding2027') {
-                // Store access level and redirect
-                sessionStorage.setItem('accessLevel', 'guest');
-                window.location.href = 'index.html';
-                return false;
-            }
-            
-            // Camper password (shows everything)
-            if (password === 'campers2027') {
-                // Store access level and redirect
+            if (password === CAMPER_PASSWORD) {
                 sessionStorage.setItem('accessLevel', 'camper');
                 window.location.href = 'index.html';
-                return false;
+            } else if (password === GUEST_PASSWORD) {
+                sessionStorage.setItem('accessLevel', 'guest');
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.style.display = 'block';
             }
-            
-            // Wrong password
-            error.style.display = 'block';
-            document.getElementById('password').value = '';
-            return false;
-        }
+        });
     </script>
 </body>
 </html>
