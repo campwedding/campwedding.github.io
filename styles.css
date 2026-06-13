@@ -186,61 +186,67 @@ nav a.camper-only:hover {
 /* Our Story Section */
 .story {
     padding: 6rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
     background: #f5f2eb;
 }
 
 .story h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     color: #2d5a27;
 }
 
-.story-subtitle {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
+.story-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-.timeline {
-    position: relative;
-    padding-left: 30px;
-    border-left: 3px dashed #87a878;
+.story-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.timeline-item {
-    margin-bottom: 3rem;
-    position: relative;
-    background: white;
-    padding: 2rem;
+.story-photos img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 3px 15px rgba(45, 90, 39, 0.1);
-    border: 2px solid #87a878;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid white;
 }
 
-.timeline-item::before {
-    content: '🐾';
-    position: absolute;
-    left: -52px;
-    top: 20px;
-    font-size: 1.5rem;
-    background: #f5f2eb;
-    padding: 5px;
+.story-text {
+    max-width: 400px;
+    text-align: center;
 }
 
-.timeline-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2d5a27;
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #3d3d3d;
+    margin-bottom: 1.5rem;
 }
 
-.timeline-date {
-    color: #5d8aa8;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .story-container {
+        flex-direction: column;
+    }
+    
+    .story-photos {
+        flex-direction: row;
+    }
+    
+    .story-photos img {
+        width: 150px;
+        height: 180px;
+    }
 }
 
 /* Details Section */
