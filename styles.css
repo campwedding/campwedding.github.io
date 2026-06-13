@@ -53,6 +53,29 @@ nav a:hover {
     color: #5d8aa8;
 }
 
+/* Special styling for Campers nav link */
+nav a.camper-only {
+    color: #f4d03f;
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+nav a.camper-only::before {
+    content: '✨ ';
+}
+
+nav a.camper-only::after {
+    content: ' 🏕️';
+}
+
+nav a.camper-only:hover {
+    color: #f9e076;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
