@@ -779,6 +779,7 @@ footer p {
 .camper-only {
     display: none;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -795,11 +796,14 @@ footer p {
     }
     
     nav ul {
-        gap: 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 1rem;
     }
     
     nav a {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         letter-spacing: 1px;
     }
     
@@ -858,5 +862,31 @@ footer p {
     
     .distance-item .city {
         text-align: center;
+    }
+    
+    .registry-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .registry-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .dog-card {
+        width: 200px;
+    }
+    
+    .dog-card img {
+        height: 200px;
+    }
+    
+    .carousel-track {
+        animation-duration: 20s;
+    }
+    
+    .camper-grid {
+        grid-template-columns: 1fr;
     }
 }
