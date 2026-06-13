@@ -27,7 +27,14 @@ function checkCamperAccess() {
         // Show all camper-only elements
         const camperElements = document.querySelectorAll('.camper-only');
         camperElements.forEach(el => {
-            el.style.display = '';
+            // Check if it's a nav link or a section/form element
+            if (el.tagName === 'A') {
+                el.style.display = 'inline';
+            } else if (el.tagName === 'SECTION') {
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'block';
+            }
         });
     }
 }
