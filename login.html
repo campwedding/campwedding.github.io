@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah & John's Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(rgba(45, 90, 39, 0.6), rgba(93, 138, 168, 0.6)),
+                        url('https://i.imgur.com/AQHlo4g.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            background: rgba(245, 242, 235, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 3px solid #87a878;
+        }
+        
+        .login-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2d5a27;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            color: #5d8aa8;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .login-form {
+            margin-top: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d5a27;
+            font-weight: bold;
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #87a878;
+            border-radius: 10px;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #2d5a27;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #2d5a27 0%, #5d8aa8 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(45, 90, 39, 0.4);
+        }
+        
+        .error-message {
+            color: #c0392b;
+            margin-top: 1rem;
+            display: none;
+            padding: 0.5rem;
+            background: #fdeaea;
+            border-radius: 5px;
+        }
+        
+        .hint {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #8b7355;
+        }
+        
+        .decorations {
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-icon">🐕 ⛺ 🐕</div>
+        <h1>Sarah & John</h1>
+        <p class="tagline">Are getting married!</p>
+        
+        <form class="login-form" onsubmit="return checkPassword(event)">
+            <div class="form-group">
+                <label for="password">Enter Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn">Enter Site 🌲</button>
+            <p class="error-message" id="error">Incorrect password. Please try again!</p>
+        </form>
+        
+        <p class="hint">Check your invitation for the password</p>
+        <div class="decorations">🐾 🏕️ 🐾</div>
+    </div>
+    
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value.toLowerCase().trim();
+            const error = document.getElementById('error');
+            
+            // Regular guest password
+            if (password === 'wedding2025') {
+                // Store access level and redirect
+                sessionStorage.setItem('accessLevel', 'guest');
+                window.location.href = 'index.html';
+                return false;
+            }
+            
+            // Camper password (shows everything)
+            if (password === 'campers2025') {
+                // Store access level and redirect
+                sessionStorage.setItem('accessLevel', 'camper');
+                window.location.href = 'index.html';
+                return false;
+            }
+            
+            // Wrong password
+            error.style.display = 'block';
+            document.getElementById('password').value = '';
+            return false;
+        }
+    </script>
+</body>
+</html>
