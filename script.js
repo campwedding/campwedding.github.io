@@ -1,7 +1,37 @@
+// Access Control - Check if user is logged in
+function checkAccess() {
+    const accessLevel = sessionStorage.getItem('accessLevel');
+    
+    // If no access level, redirect to login
+    if (!accessLevel) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Hide camper-only content for regular guests
+    if (accessLevel === 'guest') {
+        const camperElements = document.querySelectorAll('.camper-only');
+        camperElements.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+    
+    // Show camper-only content for campers
+    if (accessLevel === 'camper') {
+        const camperElements = document.querySelectorAll('.camper-only');
+        camperElements.forEach(element => {
+            element.style.display = '';
+        });
+    }
+}
+
+// Run access check when page loads
+document.addEventListener('DOMContentLoaded', checkAccess);
+
 // Countdown Timer
 function updateCountdown() {
     // Set your wedding date here (Year, Month-1, Day, Hour, Minute)
-    const weddingDate = new Date(2027, 4, 15, 15, 0, 0); // May 15, 2027 at 3:00 PM
+    const weddingDate = new Date(2025, 5, 15, 15, 0, 0); // June 15, 2025 at 3:00 PM
     const now = new Date();
     const difference = weddingDate - now;
 
@@ -45,8 +75,6 @@ document.querySelectorAll('nav a').forEach(anchor => {
 const form = document.getElementById('rsvp-form');
 if (form) {
     form.addEventListener('submit', function(e) {
-        // Form will submit to Formspree
-        // You can add additional validation here if needed
         console.log('Form submitted!');
     });
 }
