@@ -292,7 +292,7 @@ nav a.camper-only:hover {
 }
 
 .event-card::before {
-    content: '⛺';
+    content: '';
     position: absolute;
     top: -20px;
     left: 50%;
@@ -303,7 +303,7 @@ nav a.camper-only:hover {
 }
 
 .event-card:nth-child(2)::before {
-    content: '🎉';
+    content: '';
 }
 
 .event-card h3 {
