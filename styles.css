@@ -5,15 +5,34 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bone: #f8f5ef;
+    --bone-deep: #f0ebdf;
+    --white: #ffffff;
+    --ink: #33362f;
+    --ink-soft: #6b6e62;
+    --sage: #7c8a6c;
+    --sage-deep: #56624a;
+    --slate: #7f97a3;
+    --slate-deep: #4f6672;
+    --line: #ddd6c5;
+}
+
 body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.6;
-    color: #3d3d3d;
-    background-color: #f5f2eb;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink);
+    background-color: var(--bone);
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
 }
 
 /* Navigation */
@@ -21,166 +40,183 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(245, 242, 235, 0.95);
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(45, 90, 39, 0.15);
+    background: rgba(248, 245, 239, 0.92);
+    backdrop-filter: blur(6px);
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
     z-index: 1000;
-    border-bottom: 3px solid #87a878;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 3rem;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 nav a {
     text-decoration: none;
-    color: #2d5a27;
+    color: var(--ink);
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    letter-spacing: 1.5px;
+    font-size: 0.78rem;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 nav a:hover {
-    color: #5d8aa8;
+    color: var(--sage-deep);
 }
 
 nav a.active {
-    color: #5d8aa8;
-    border-bottom: 2px solid #5d8aa8;
-    padding-bottom: 2px;
+    color: var(--sage-deep);
+    border-bottom-color: var(--sage-deep);
 }
 
-/* Special styling for Campers nav link */
+/* Camper-only nav link gets a quiet, distinct accent instead of a loud badge */
 nav a.camper-only {
-    color: #f4d03f;
-    font-weight: bold;
-    text-shadow: 
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+    color: var(--slate-deep);
 }
 
-nav a.camper-only::before {
-    content: '✨ ';
-}
-
-nav a.camper-only::after {
-    content: ' 🏕️';
-}
-
-nav a.camper-only:hover {
-    color: #f9e076;
+nav a.camper-only:hover,
+nav a.camper-only.active {
+    color: var(--sage-deep);
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(45, 90, 39, 0.4), rgba(93, 138, 168, 0.4)),
+    background: linear-gradient(180deg, rgba(51, 54, 47, 0.3), rgba(51, 54, 47, 0.6)),
                 url('https://i.imgur.com/O5Zn6tQ.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--bone);
     position: relative;
 }
 
-
-
 .hero-content h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
     font-weight: 400;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
 }
 
 .hero-content .tagline {
-    font-size: 1.5rem;
-    font-style: italic;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 300;
     margin-bottom: 2rem;
+    color: rgba(248, 245, 239, 0.9);
 }
 
 .hero-content .date {
-    font-size: 2rem;
-    letter-spacing: 3px;
-    margin-bottom: 0.5rem;
-    background: rgba(45, 90, 39, 0.7);
-    padding: 0.5rem 2rem;
     display: inline-block;
-    border-radius: 5px;
+    font-size: 1.05rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.9rem 0;
+    margin-bottom: 1rem;
+    border-top: 1px solid rgba(248, 245, 239, 0.5);
+    border-bottom: 1px solid rgba(248, 245, 239, 0.5);
 }
 
 .hero-content .location {
-    font-size: 1.2rem;
+    display: block;
+    font-size: 0.9rem;
     letter-spacing: 2px;
-    margin-top: 1rem;
+    text-transform: uppercase;
+    color: rgba(248, 245, 239, 0.85);
 }
 
 /* Countdown Section */
 .countdown {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #2d5a27 0%, #5d8aa8 100%);
+    padding: 4.5rem 2rem;
+    background: var(--bone-deep);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     text-align: center;
-    position: relative;
 }
 
-
-
 .countdown h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #f5f2eb;
-    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
 }
 
 #timer {
     display: flex;
     justify-content: center;
-    gap: 2rem;
     flex-wrap: wrap;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 .time-block {
-    background: #f5f2eb;
-    padding: 2rem;
-    border-radius: 15px;
-    min-width: 120px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    border: 3px solid #87a878;
+    flex: 1;
+    min-width: 110px;
+    padding: 0 1.75rem;
+    border-left: 1px solid var(--line);
+}
+
+.time-block:first-child {
+    border-left: none;
 }
 
 .time-block span {
     display: block;
-    font-size: 3rem;
     font-family: 'Playfair Display', serif;
-    color: #2d5a27;
+    font-size: 2.75rem;
+    color: var(--sage-deep);
 }
 
 .time-block label {
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.8rem;
-    color: #5d8aa8;
-    font-weight: bold;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+}
+
+/* Shared Section Title / Subtitle */
+.story h2,
+.details h2,
+.travel h2,
+.food-drink h2,
+.registry h2,
+.campers h2,
+.rsvp h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: var(--slate-deep);
+    margin-bottom: 3rem;
 }
 
 /* Our Story Section */
 .story {
     padding: 6rem 2rem;
-    background: #f5f2eb;
+    background: var(--bone);
 }
 
 .story h2 {
-    text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #2d5a27;
 }
 
 .story-container {
@@ -203,9 +239,9 @@ nav a.camper-only:hover {
     width: 250px;
     height: 300px;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    border: 4px solid white;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(51, 54, 47, 0.08);
 }
 
 .story-text {
@@ -214,9 +250,9 @@ nav a.camper-only:hover {
 }
 
 .story-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #3d3d3d;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
     margin-bottom: 1.5rem;
 }
 
@@ -225,11 +261,11 @@ nav a.camper-only:hover {
     .story-container {
         flex-direction: column;
     }
-    
+
     .story-photos {
         flex-direction: row;
     }
-    
+
     .story-photos img {
         width: 150px;
         height: 180px;
@@ -239,104 +275,96 @@ nav a.camper-only:hover {
 /* Details Section */
 .details {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #e8efe5 0%, #dce8f0 100%);
-    position: relative;
+    background: var(--bone-deep);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
-.details::before {
-    content: '🌲🏕️🌲⛺🌲🏕️🌲';
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    letter-spacing: 0.5rem;
-    margin-bottom: 1rem;
+.details h3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
 }
 
-.details h2 {
+.venue-panel {
+    background: var(--white);
+    border: 1px solid var(--line);
+    max-width: 480px;
+    margin: 2.5rem auto 3.5rem;
+    padding: 2.25rem 2.5rem;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #2d5a27;
+}
+
+.venue-panel .venue-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--sage-deep);
+    margin-bottom: 0.5rem;
+}
+
+.venue-panel .venue-address-text {
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .events {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
     margin-bottom: 4rem;
 }
 
 .event-card {
-    background: white;
-    padding: 3rem;
-    border-radius: 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 2.75rem 2.5rem;
     text-align: center;
-    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
-    max-width: 350px;
-    border: 3px solid #5d8aa8;
-    position: relative;
-}
-
-.event-card::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.5rem;
-    background: white;
-    padding: 0 10px;
-}
-
-.event-card:nth-child(2)::before {
-    content: '';
+    max-width: 320px;
 }
 
 .event-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-    color: #2d5a27;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
 }
 
 .event-card .time {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #5d8aa8;
+    color: var(--slate-deep);
 }
 
 .event-card .venue {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: #3d3d3d;
+    color: var(--ink);
 }
 
 .event-card .address {
-    color: #8b7355;
+    color: var(--ink-soft);
     margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
-    background: #2d5a27;
-    color: white;
+    padding: 0.85rem 2.2rem;
+    background: transparent;
+    color: var(--sage-deep);
+    border: 1px solid var(--sage-deep);
     text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.78rem;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background: #5d8aa8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(93, 138, 168, 0.4);
+    background: var(--sage-deep);
+    color: var(--bone);
 }
 
 .additional-info {
@@ -346,34 +374,20 @@ nav a.camper-only:hover {
 }
 
 .additional-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    color: #2d5a27;
+    color: var(--sage-deep);
 }
 
 .additional-info p {
-    color: #3d3d3d;
+    color: var(--ink-soft);
 }
 
 /* Travel & Accommodations Section */
 .travel {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #dce8f0 0%, #e8efe5 100%);
-}
-
-.travel h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #2d5a27;
-}
-
-.travel-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #5d8aa8;
-    margin-bottom: 3rem;
+    background: var(--bone);
 }
 
 .travel-content {
@@ -393,9 +407,9 @@ nav a.camper-only:hover {
 .travel-image img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
-    border: 3px solid #87a878;
-    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(51, 54, 47, 0.08);
 }
 
 .travel-info {
@@ -404,8 +418,8 @@ nav a.camper-only:hover {
 }
 
 .travel-info h3 {
-    font-size: 1.5rem;
-    color: #2d5a27;
+    font-size: 1.4rem;
+    color: var(--sage-deep);
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -415,16 +429,16 @@ nav a.camper-only:hover {
 }
 
 .travel-info p {
-    color: #3d3d3d;
-    line-height: 1.6;
+    color: var(--ink-soft);
 }
 
 .venue-address {
-    background: white;
+    background: var(--white);
     padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 4px solid #2d5a27;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--sage-deep);
     margin: 1rem 0;
+    color: var(--ink);
 }
 
 .distance-list {
@@ -432,55 +446,55 @@ nav a.camper-only:hover {
 }
 
 .distance-item {
-    background: white;
+    background: var(--white);
     padding: 1rem 1.5rem;
-    border-radius: 10px;
     margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #87a878;
+    border: 1px solid var(--line);
 }
 
 .distance-item .city {
-    font-weight: bold;
-    color: #2d5a27;
+    font-weight: 400;
+    color: var(--ink);
     width: 100%;
     margin-bottom: 0.5rem;
 }
 
 .distance-item .time {
-    color: #5d8aa8;
-    font-weight: bold;
+    color: var(--slate-deep);
 }
 
 .distance-item .miles {
-    color: #8b7355;
+    color: var(--ink-soft);
 }
 
 .accommodation {
-    background: white;
+    background: var(--white);
     padding: 1.5rem;
-    border-radius: 15px;
     margin: 1rem 0;
-    border: 2px solid #87a878;
+    border: 1px solid var(--line);
 }
 
 .accommodation h4 {
-    font-size: 1.2rem;
-    color: #2d5a27;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--sage-deep);
     margin-bottom: 0.5rem;
 }
 
 .accommodation p {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
+    color: var(--ink-soft);
 }
 
 .btn-small {
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.72rem;
     margin-top: 0.5rem;
 }
 
@@ -492,21 +506,9 @@ nav a.camper-only:hover {
 /* Food & Drink Section */
 .food-drink {
     padding: 6rem 2rem;
-    background: #f5f2eb;
-}
-
-.food-drink h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #2d5a27;
-}
-
-.food-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #5d8aa8;
-    margin-bottom: 3rem;
+    background: var(--bone-deep);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .food-content {
@@ -527,9 +529,9 @@ nav a.camper-only:hover {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid #87a878;
-    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(51, 54, 47, 0.08);
 }
 
 .food-text {
@@ -539,8 +541,8 @@ nav a.camper-only:hover {
 }
 
 .food-text h3 {
-    font-size: 1.4rem;
-    color: #2d5a27;
+    font-size: 1.3rem;
+    color: var(--sage-deep);
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -550,49 +552,77 @@ nav a.camper-only:hover {
 }
 
 .food-text p {
-    color: #3d3d3d;
-    line-height: 1.6;
+    color: var(--ink-soft);
 }
 
 /* Registry Section */
 .registry {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #dce8f0 0%, #e8efe5 100%);
+    background: var(--bone);
 }
 
-.registry h2 {
+.registry-intro {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2d5a27;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: var(--ink-soft);
+}
+
+.registry-group-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--slate-deep);
+    margin: 3rem 0 1.5rem;
+}
+
+.registry-group-title:first-of-type {
+    margin-top: 0;
 }
 
 .registry .event-card {
     display: block;
-    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.25s ease;
 }
 
 .registry .event-card:hover {
-    transform: translateY(-5px);
+    border-color: var(--sage-deep);
+}
+
+.registry .event-card h3 {
+    font-size: 1.2rem;
+}
+
+.registry-choice {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+}
+
+.registry-note {
+    font-style: italic;
+    color: var(--slate-deep);
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 /* Campers Section */
 .campers {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #e8efe5 0%, #dce8f0 100%);
+    background: var(--bone-deep);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .campers h2 {
-    text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #2d5a27;
 }
 
 .campers-intro {
     text-align: center;
-    font-size: 1.1rem;
-    color: #3d3d3d;
+    color: var(--ink-soft);
     margin-bottom: 3rem;
     max-width: 700px;
     margin-left: auto;
@@ -602,22 +632,20 @@ nav a.camper-only:hover {
 .camper-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.75rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .camper-card {
-    background: white;
+    background: var(--white);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(45, 90, 39, 0.15);
-    border: 3px solid #87a878;
+    border: 1px solid var(--line);
 }
 
 .camper-card h3 {
-    font-size: 1.3rem;
-    color: #2d5a27;
+    font-size: 1.2rem;
+    color: var(--sage-deep);
     margin-bottom: 1rem;
 }
 
@@ -628,8 +656,8 @@ nav a.camper-only:hover {
 
 .camper-card li {
     padding: 0.5rem 0;
-    border-bottom: 1px dashed #87a878;
-    color: #3d3d3d;
+    border-bottom: 1px dashed var(--line);
+    color: var(--ink-soft);
 }
 
 .camper-card li:last-child {
@@ -637,13 +665,27 @@ nav a.camper-only:hover {
 }
 
 .camper-card p {
-    color: #3d3d3d;
+    color: var(--ink-soft);
     margin-top: 0.5rem;
 }
 
 /* Camper-only visibility (hidden by default, shown via JavaScript) */
 .camper-only {
     display: none;
+}
+
+.camper-banner {
+    background: var(--bone-deep);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--sage-deep);
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--ink);
+}
+
+.camper-banner a {
+    color: var(--sage-deep);
+    text-decoration: underline;
 }
 
 /* RSVP Section */
@@ -653,17 +695,14 @@ nav a.camper-only:hover {
     margin: 0 auto;
 }
 
-.rsvp h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #2d5a27;
-}
-
 .rsvp > p {
     text-align: center;
+    margin-bottom: 1rem;
+    color: var(--ink-soft);
+}
+
+.rsvp > p:last-of-type {
     margin-bottom: 2rem;
-    color: #5d8aa8;
 }
 
 .form-group {
@@ -673,8 +712,8 @@ nav a.camper-only:hover {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #2d5a27;
+    font-weight: 400;
+    color: var(--ink);
 }
 
 .form-group input[type="text"],
@@ -683,17 +722,18 @@ nav a.camper-only:hover {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #87a878;
-    border-radius: 5px;
+    border: 1px solid var(--line);
     font-size: 1rem;
     font-family: inherit;
+    background: var(--white);
+    color: var(--ink);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #5d8aa8;
+    border-color: var(--sage-deep);
 }
 
 .radio-group {
@@ -704,57 +744,112 @@ nav a.camper-only:hover {
 
 .radio-group input {
     margin-right: 0.5rem;
-    accent-color: #2d5a27;
+    accent-color: var(--sage-deep);
 }
 
 .radio-group label {
     display: inline;
-    font-weight: normal;
+    font-weight: 300;
 }
 
 .btn-primary {
     width: 100%;
     padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #2d5a27 0%, #3d5a27 50%, #5d8aa8 100%);
-    color: white;
+    background: var(--sage-deep);
+    color: var(--bone);
     text-align: center;
-    padding: 3rem 2rem;
-    position: relative;
-}
-
-footer::before {
-    content: '🐕 🏕️ 🌲 ❤️ 🌲 🏕️ 🐕';
-    display: block;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5rem;
+    padding: 3.5rem 2rem;
 }
 
 footer p {
     margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 .footer-hashtag {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
+    border: 1px solid rgba(248, 245, 239, 0.4);
+    padding: 0.4rem 1.2rem;
     display: inline-block;
     margin-top: 1rem;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
 }
 
-/* Paw Print Trail */
-.paw-trail {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    opacity: 0.3;
-    pointer-events: none;
+/* Login Page */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(51, 54, 47, 0.3), rgba(51, 54, 47, 0.6)),
+                url('https://i.imgur.com/O5Zn6tQ.jpg') center/cover;
+    padding: 2rem;
+}
+
+.login-container {
+    background: rgba(248, 245, 239, 0.97);
+    padding: 3rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid var(--line);
+}
+
+.login-container h1 {
+    color: var(--ink);
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-tagline {
+    color: var(--slate-deep);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+}
+
+.login-container input[type="text"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--ink);
+}
+
+.login-container input[type="text"]:focus {
+    outline: none;
+    border-color: var(--sage-deep);
+}
+
+.login-error {
+    color: #a1503b;
+    margin-top: 1rem;
+    display: none;
+    font-size: 0.9rem;
+}
+
+.login-hint {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    font-style: italic;
 }
 
 /* Responsive Design */
@@ -762,94 +857,84 @@ footer p {
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .hero-content .date {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
     }
-    
-    .hero::before {
-        font-size: 1.5rem;
-        letter-spacing: 0.5rem;
-    }
-    
+
     nav ul {
         gap: 1.5rem;
         flex-wrap: wrap;
         padding: 0 1rem;
     }
-    
+
     nav a {
-        font-size: 0.8rem;
+        font-size: 0.72rem;
         letter-spacing: 1px;
     }
-    
+
     .events {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .time-block {
-        min-width: 80px;
-        padding: 1rem;
+        min-width: 45%;
+        padding: 0.5rem 0;
+        border-left: none;
+        border-top: 1px solid var(--line);
+        margin-top: 1rem;
     }
-    
+
+    .time-block:first-child,
+    .time-block:nth-child(2) {
+        border-top: none;
+        margin-top: 0;
+    }
+
     .time-block span {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
-    
-    .details::before {
-        font-size: 1.5rem;
-    }
-    
+
     .food-content {
         flex-direction: column;
     }
-    
+
     .food-image {
         max-width: 250px;
     }
-    
+
     .food-image img {
         height: 250px;
     }
-    
+
     .travel-content {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .travel-image {
         max-width: 300px;
     }
-    
+
     .travel-info {
         text-align: center;
     }
-    
+
     .venue-address {
         border-left: none;
-        border-top: 4px solid #2d5a27;
+        border-top: 3px solid var(--sage-deep);
     }
-    
+
     .distance-item {
         justify-content: center;
         text-align: center;
     }
-    
+
     .distance-item .city {
         text-align: center;
     }
-    
-    .registry-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .registry-card {
-        max-width: 280px;
-        width: 100%;
-    }
-    
+
     .camper-grid {
         grid-template-columns: 1fr;
     }

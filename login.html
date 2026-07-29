@@ -4,132 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabe & Boni's Wedding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Lato', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(45, 90, 39, 0.4), rgba(93, 138, 168, 0.4)),
-                        url('https://i.imgur.com/O5Zn6tQ.jpg') center/cover;
-        }
-        
-        .login-container {
-            background: rgba(245, 242, 235, 0.95);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            border: 3px solid #87a878;
-        }
-        
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #2d5a27;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            color: #5d8aa8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-        
-        .emojis {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
-            text-align: left;
-            margin-bottom: 0.5rem;
-            color: #2d5a27;
-            font-weight: bold;
-        }
-        
-        input[type="password"] {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #87a878;
-            border-radius: 10px;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #5d8aa8;
-        }
-        
-        button {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: #2d5a27;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        
-        button:hover {
-            background: #5d8aa8;
-            transform: translateY(-2px);
-        }
-        
-        .error {
-            color: #c0392b;
-            margin-top: 1rem;
-            display: none;
-        }
-        
-        .hint {
-            color: #8b7355;
-            font-size: 0.9rem;
-            margin-top: 1.5rem;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="login-page">
     <div class="login-container">
         <h1>Gabe & Boni</h1>
-        <p class="tagline">Are getting married!</p>
-        
+        <p class="login-tagline">Are getting married!</p>
+
         <form id="login-form">
             <label for="password">Enter Password</label>
-        <input type="text" id="password" placeholder="Enter password" style="padding: 15px 20px; font-size: 1.1rem; width: 100%; max-width: 300px; border-radius: 8px; border: 2px solid #5d8aa8;">            <button type="submit">Enter Site</button>
+            <input type="text" id="password" placeholder="Enter password">
+            <button type="submit" class="btn btn-primary">Enter Site</button>
         </form>
-        
-        <p class="error" id="error-message">Incorrect password. Please try again.</p>
-        <p class="hint">Check your invitation for the password!</p>
+
+        <p class="login-error" id="error-message">Incorrect password. Please try again.</p>
+        <p class="login-hint">Check your invitation for the password!</p>
     </div>
 
     <script>
         const GUEST_PASSWORD = 'andrewpoopypants';
         const CAMPER_PASSWORD = 'campers2027';
-        
+
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const password = document.getElementById('password').value.toLowerCase().trim();
             const errorMessage = document.getElementById('error-message');
-            
+
             if (password === CAMPER_PASSWORD) {
                 sessionStorage.setItem('accessLevel', 'camper');
                 window.location.href = 'index.html';
