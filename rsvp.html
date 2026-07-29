@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabe & Boni's Wedding | RSVP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a href="food.html">Food & Drink</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="campers.html" class="camper-only">Campers</a></li>
+            <li><a href="rsvp.html" class="active">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp">
+        <h2>RSVP</h2>
+        <p>Please respond by April 1, 2027</p>
+        <p>As we have elected to only send Invites, there is no pressure to RSVP soon, you'll receive email reminders before deadline, </p>
+        <!-- Add this after the RSVP section intro paragraph, before the form -->
+<p class="camper-only" style="background-color: #2d5a27; color: #f5f2eb; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; font-weight: 500;">
+    🏕️ <strong>For those invited to camp:</strong> Please review the <a href="campers.html" style="color: #ffd700; text-decoration: underline;">Campers tab</a> prior to completing your RSVP!
+</p>
+
+        <form id="rsvp-form" action="https://formspree.io/f/mdavpowa" method="POST">
+            <div class="form-group">
+                <label for="name">Names of all those included in RSVP</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Contact Email for RSVP</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Confirm Number of Guests</label>
+                <select id="guests" name="guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Will you attend?</label>
+                <div class="radio-group">
+                    <input type="radio" id="accept" name="attendance" value="accept" required>
+                    <label for="accept">Accept</label>
+
+                    <input type="radio" id="decline" name="attendance" value="decline">
+                    <label for="decline">Regretfully Decline</label>
+                </div>
+
+            <div class="form-group camper-only">
+    <label for="camping">Will you be camping?</label>
+    <select id="camping" name="camping">
+        <option value="">Please select</option>
+        <option value="yes">Yes - Count me in!</option>
+        <option value="no">No - I'll find other lodging</option>
+    </select>
+</div>
+
+<div class="form-group camper-only">
+    <label for="arrival">Which day would you like to arrive?</label>
+    <select id="arrival" name="arrival">
+        <option value="">Please select</option>
+        <option value="thursday">Thursday (limited space)</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+    </select>
+</div>
+
+<div class="form-group camper-only">
+    <label for="sheets">Will you be able to bring your own blanket and pillow?</label>
+    <select id="sheets" name="sheets">
+        <option value="">Please select</option>
+        <option value="twin">Yes</option>
+        <option value="full">No, I need halp</option>
+    </select>
+</div>
+
+<div class="form-group camper-only">
+    <label for="sheets">What size sheets do you have available to bring?</label>
+    <select id="sheets" name="sheets">
+        <option value="">Please select</option>
+        <option value="twin">Twin</option>
+        <option value="full">Full</option>
+        <option value="queen">Queen</option>
+    </select>
+</div>
+
+            <div class="form-group">
+                <label for="dietary">Dietary Restrictions (please don't be shy saying what you need!), for allergies please specify severity so we can plan with our caterer</label>
+                <textarea id="dietary" name="dietary" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Other notes for Gabe & Boni</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send RSVP</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Coded with love by Boni</p>
+        <p>#GabeandBoni2027</p>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>
